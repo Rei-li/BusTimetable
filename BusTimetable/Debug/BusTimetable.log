@@ -1,0 +1,15 @@
+﻿  stdafx.cpp
+  Timetable.cpp
+d:\библиотека\study\3.1\оаип_2\projects\project_2_1\bustimetable\bustimetable\timetable.cpp(97): warning C4018: <: несоответствие типов со знаком и без знака
+d:\библиотека\study\3.1\оаип_2\projects\project_2_1\bustimetable\bustimetable\timetable.cpp(112): warning C4018: <: несоответствие типов со знаком и без знака
+d:\библиотека\study\3.1\оаип_2\projects\project_2_1\bustimetable\bustimetable\timetable.cpp(135): warning C4018: <: несоответствие типов со знаком и без знака
+  BusTimetable.cpp
+d:\библиотека\study\3.1\оаип_2\projects\project_2_1\bustimetable\bustimetable\bustimetable.cpp(48): error C3861: HandleCommand: идентификатор не найден
+d:\библиотека\study\3.1\оаип_2\projects\project_2_1\bustimetable\bustimetable\bustimetable.cpp(60): error C2065: capa: необъявленный идентификатор
+d:\библиотека\study\3.1\оаип_2\projects\project_2_1\bustimetable\bustimetable\bustimetable.cpp(63): error C2065: lettera: необъявленный идентификатор
+d:\библиотека\study\3.1\оаип_2\projects\project_2_1\bustimetable\bustimetable\bustimetable.cpp(66): error C2065: capa: необъявленный идентификатор
+d:\библиотека\study\3.1\оаип_2\projects\project_2_1\bustimetable\bustimetable\bustimetable.cpp(69): error C2065: lettera: необъявленный идентификатор
+d:\библиотека\study\3.1\оаип_2\projects\project_2_1\bustimetable\bustimetable\bustimetable.cpp(72): error C2065: capa: необъявленный идентификатор
+d:\библиотека\study\3.1\оаип_2\projects\project_2_1\bustimetable\bustimetable\bustimetable.cpp(78): error C2065: nota: необъявленный идентификатор
+  Bus.cpp
+  Создание кода...
