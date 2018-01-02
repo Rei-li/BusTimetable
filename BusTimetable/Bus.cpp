@@ -50,6 +50,11 @@ tm Bus::GetArrivalTime()
 	return _arrivalTime;
 }
 
+string Bus::GetDestination()
+{
+	return _destination;
+}
+
 string Bus::ToString()
 {
 	return string(std::to_string(_id) + ", " +  std::to_string(_number) + ", " + _busType + ", " + _destination +  ", " + std::to_string( _departureTime.tm_hour ) + ":"+ std::to_string(_departureTime.tm_min) + ", " + std::to_string(_arrivalTime.tm_hour) + ":" + std::to_string(_arrivalTime.tm_min));

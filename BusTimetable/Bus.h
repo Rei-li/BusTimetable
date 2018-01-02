@@ -15,6 +15,7 @@ public:
 	int GetId();
 	void SetId(int id);
 	tm GetArrivalTime();
+	std::string GetDestination();
 	std::string ToString();
 	~Bus();
 };

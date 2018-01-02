@@ -1,2 +1,8 @@
-2, 125, test bus, Riga, 18:45, 23:45
-3, 235, test bus, Berlin, 13:12, 16:25
+2, 125,  test bus,  Riga, 18:45, 23:45
+3, 235,  test bus,  Berlin, 13:12, 16:254
+4, 234,  test,  Vilnus, 12:54, 19:23
+6, 32, test, Tallin, 12:56, 15:55
+7, 234, test, Vilnus, 12:56, 19:20
+8, 234, test, Vilnus, 15:26, 22:10
+9, 234, test, Vilnus, 11:40, 14:40
+10, 234, test, Vilnus, 11:12, 13:18

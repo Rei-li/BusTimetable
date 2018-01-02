@@ -14,7 +14,10 @@ public:
 	void DeleteRecord(int busId);
 	void UpdateRecord(Bus updatedBus);
 	std::vector<Bus> GetRecords();
-	std::vector<Bus> FindSuitableBuses(tm arrivalTime);
+	std::vector<Bus> FindSuitableBuses(std::string destination, tm arrivalTime);
 	~Timetable();
+
+private:
+	std::string TrimString(std::string const& str);
 };
 

@@ -44,7 +44,8 @@ void Timetable::GetData()
 		string* busFields = new string[6];
 		int i = 0;
 		while (getline(busStringfullData, subString, ',')) {
-			busFields[i] = subString;
+			string subStringTrimmed = TrimString(subString);
+			busFields[i] = subStringTrimmed;
 			i++;
 		}
 		tm departureTime;
@@ -94,7 +95,7 @@ void Timetable::DeleteRecord(int busId)
 	vector<Bus> updatedBusesList;
 	std::ofstream ofs;
 	ofs.open(_fileName, std::ofstream::out | std::ofstream::trunc);
-	for (int counter = 0; counter < _buses.size(); counter++) {
+	for (unsigned int counter = 0; counter < _buses.size(); counter++) {
 		if (_buses[counter].GetId() != busId) {
 			updatedBusesList.push_back(_buses[counter]);
 			ofs << _buses[counter].ToString() << endl;
@@ -109,7 +110,7 @@ void Timetable::UpdateRecord(Bus updatedBus)
 	vector<Bus> updatedBusesList;
 	std::ofstream ofs;
 	ofs.open(_fileName, std::ofstream::out | std::ofstream::trunc);
-	for (int counter = 0; counter < _buses.size(); counter++) {
+	for (unsigned int counter = 0; counter < _buses.size(); counter++) {
 		if (_buses[counter].GetId() != updatedBus.GetId()) {
 			updatedBusesList.push_back(_buses[counter]);
 			ofs << _buses[counter].ToString() << endl;
@@ -128,20 +129,31 @@ std::vector<Bus> Timetable::GetRecords()
 	return _buses;
 }
 
-std::vector<Bus> Timetable::FindSuitableBuses(tm arrivalTime)
+std::vector<Bus> Timetable::FindSuitableBuses(string destination, tm arrivalTime)
 {
 	vector<Bus> filteredBusesList;
 
-	for (int counter = 0; counter < _buses.size(); counter++) {
+	for (unsigned int counter = 0; counter < _buses.size(); counter++) {
 		tm time = _buses[counter].GetArrivalTime();
-		if (time.tm_hour <= arrivalTime.tm_hour && time.tm_min <= arrivalTime.tm_min) {
+		if (_buses[counter].GetDestination() == destination && ((time.tm_hour == arrivalTime.tm_hour && time.tm_min <= arrivalTime.tm_min) || (time.tm_hour < arrivalTime.tm_hour)  ) ) {
 			filteredBusesList.push_back(_buses[counter]);
 		}
 	}
 
-	return std::vector<Bus>();
+	return filteredBusesList;
 }
 
 Timetable::~Timetable()
 {
+}
+
+std::string Timetable::TrimString(std::string const & str)
+{
+	if (str.empty())
+		return str;
+
+	std::size_t firstScan = str.find_first_not_of(' ');
+	std::size_t first = firstScan == std::string::npos ? str.length() : firstScan;
+	std::size_t last = str.find_last_not_of(' ');
+	return str.substr(first, last - first + 1);
 }
